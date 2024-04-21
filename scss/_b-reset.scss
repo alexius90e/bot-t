@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+
+@font-face {
+  font-family: 'Micra';
+  src: url('../fonts/Micra.eot');
+  src: url('../fonts/Micra.eot') format('embedded-opentype'),
+    url('../fonts/Micra.woff') format('woff');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Micra';
+  src: url('../fonts/Micra-Bold.eot');
+  src: url('../fonts/Micra-Bold.eot') format('embedded-opentype'),
+    url('../fonts/Micra-Bold.woff') format('woff');
+  font-weight: 700;
+}
+
+html {
+  font-size: 16px;
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  overflow-y: scroll;
+  color: $black;
+  background-color: $white;
+}
+
+a,
+button,
+input,
+textarea {
+  font-family: 'Unbounded', sans-serif;
+  text-decoration: none;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

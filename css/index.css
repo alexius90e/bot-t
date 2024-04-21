@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap");
+@font-face {
+  font-family: "Micra";
+  src: url("../fonts/Micra.eot");
+  src: url("../fonts/Micra.eot") format("embedded-opentype"), url("../fonts/Micra.woff") format("woff");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Micra";
+  src: url("../fonts/Micra-Bold.eot");
+  src: url("../fonts/Micra-Bold.eot") format("embedded-opentype"), url("../fonts/Micra-Bold.woff") format("woff");
+  font-weight: 700;
+}
+html {
+  font-size: 16px;
+  font-family: "Unbounded", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  overflow-y: scroll;
+  color: #181d42;
+  background-color: #ffffff;
+}
+
+a,
+button,
+input,
+textarea {
+  font-family: "Unbounded", sans-serif;
+  text-decoration: none;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+@media (max-width: 1200px) {
+  .container {
+    max-width: 992px;
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    max-width: 576px;
+  }
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 0;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+.header__logo-link {
+  font-family: "Micra", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: #2284ea;
+}
+.header__nav {
+  display: flex;
+  gap: 50px;
+}
+@media (max-width: 992px) {
+  .header__nav {
+    gap: 24px;
+  }
+}
+@media (max-width: 768px) {
+  .header__nav {
+    display: none;
+  }
+}
+.header__nav-link {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 171%;
+  color: #363636;
+}
+.header__login-button {
+  padding: 21px 40px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #2284ea;
+  border: 2px solid #2284ea;
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.1);
+}
+@media (max-width: 768px) {
+  .header__login-button {
+    padding: 15px 30px;
+  }
+}

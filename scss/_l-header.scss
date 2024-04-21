@@ -1,0 +1,60 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 0;
+
+  & .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__logo {
+    &-link {
+      font-family: 'Micra', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      color: #2284ea;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: 50px;
+
+    @include laptop {
+      gap: 24px;
+    }
+
+    @include tablet {
+      display: none;
+    }
+
+    &-link {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 171%;
+      color: #363636;
+    }
+  }
+
+  &__login {
+    &-button {
+      padding: 21px 40px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+      color: #2284ea;
+      border: 2px solid #2284ea;
+      border-radius: 40px;
+      background: rgba(255, 255, 255, 0.1);
+
+      @include tablet {
+        padding: 15px 30px;
+      }
+    }
+  }
+}
