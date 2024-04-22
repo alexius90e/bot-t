@@ -17,15 +17,15 @@
         </div>
 
         <nav class="header__nav">
-          <a class="header__nav-link" href="#">Боты</a>
-          <a class="header__nav-link" href="#">Сервисы</a>
+          <a class="header__nav-link header__nav-link_dropdown" href="#">Боты</a>
+          <a class="header__nav-link header__nav-link_dropdown" href="#">Сервисы</a>
           <a class="header__nav-link" href="#">Отзывы</a>
           <a class="header__nav-link" href="#">Способ оплаты</a>
           <a class="header__nav-link" href="#">FAQ</a>
         </nav>
 
         <div class="header__login">
-          <button class="header__login-button">Вход</button>
+          <button class="header__login-button button">Вход</button>
         </div>
       </div>
     </header>
@@ -182,6 +182,50 @@
                 удовлетворить потребности клиентов и повысить эффективность
               </p>
             </div>
+          </div>
+
+          <div class="constructor__buttons">
+            <a class="constructor__buttons-youtube button" href="#">Смотреть инструкцию</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-us">
+        <div class="container">
+          <h2 class="contact-us__title">Хотите использовать все преимущества сервиса?</h2>
+          <p class="contact-us__description">
+            Оставьте заявку или свяжитесь с нами любым удобным способом и попробуйте уникальные
+            возможности нашего сервиса
+          </p>
+
+          <div class="contact-us__wrapper">
+            <div class="contact-us__wrapper-main">
+              <h5 class="contact-us__wrapper-title">Свяжитесь с нами</h5>
+              <div class="contact-us__wrapper-links">
+                <a class="contact-us__wrapper-links-item button" href="#">Связаться с нами</a>
+                <a class="contact-us__wrapper-links-item button" href="#">Перейти в бот</a>
+              </div>
+
+              <h5 class="contact-us__wrapper-title">или оставьте заявку</h5>
+              <form class="contact-us__wrapper-form">
+                <input
+                  class="contact-us__wrapper-form-input"
+                  type="text"
+                  name="telegram"
+                  placeholder="@telegram"
+                  required
+                />
+                <button class="contact-us__wrapper-form-button button">Оставить заявку</button>
+              </form>
+            </div>
+
+            <figure class="contact-us__wrapper-figure">
+              <img
+                class="contact-us__wrapper-figure-image"
+                src="./assets/contuct-us-phone.png"
+                alt="phone"
+              />
+            </figure>
           </div>
         </div>
       </section>

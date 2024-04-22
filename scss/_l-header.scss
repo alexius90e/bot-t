@@ -39,6 +39,21 @@
       font-size: 14px;
       line-height: 171%;
       color: #363636;
+
+      &_dropdown {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        &::after {
+          content: '';
+          display: inline-block;
+          height: 7px;
+          width: 12px;
+          background: url(../assets/arrow.svg) center no-repeat;
+          background-size: 12px;
+        }
+      }
     }
   }
 
