@@ -150,16 +150,56 @@
     overflow: hidden;
 
     @include laptop {
-      position: static;
+      position: relative;
+      top: auto;
+      left: auto;
+      right: auto;
+      bottom: auto;
       flex: 1 1 100%;
       display: flex;
       justify-content: center;
+      margin: 0 -10px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 1;
+      display: block;
+      width: 500px;
+      height: 500px;
+      border-radius: 500px;
+      background-color: #cee3ff;
+      transform: translateX(calc(-50% + 110px)) translateY(calc(-50% + 60px));
+      filter: blur(100px);
+
+      @include desktop {
+        transform: translateX(calc(-50% + 70px)) translateY(calc(-50% + 50px));
+      }
+
+      @include laptop {
+        
+        transform: translateX(calc(-50% + 10px)) translateY(calc(-50% + -30px));
+      }
+
+      @include tablet {
+        width: 400px;
+        height: 400px;
+        filter: blur(50px);
+      }
+
+      @include mobile {
+        transform: translateX(calc(-50% + 10px)) translateY(calc(-50% + 50px));
+      }
     }
 
     &-image {
       position: absolute;
       left: 50%;
       bottom: -80px;
+      z-index: 2;
       max-width: 100%;
       transform: translateX(calc(-50% + 190px));
 
@@ -168,21 +208,15 @@
       }
 
       @include laptop {
-        position: static;
-        transform: translateX(160px);
-        
+        position: relative;
+        left: auto;
+        bottom: auto;
+        transform: translateX(60px);
       }
 
       @include tablet {
         max-height: 498px;
-        transform: translateX(80px);
-        
       }
-
-      @include mobile {
-        transform: translateX(40px);
-      }
-
     }
   }
 }
