@@ -1,3 +1,133 @@
 .constructor {
-  
+  margin: 100px 0;
+
+  @include laptop {
+    position: relative;
+    z-index: 5;
+    margin: -20px 0 50px;
+    padding-top: 20px;
+    border-radius: 30px;
+    box-shadow: 0 -26px 54px 0 rgba(0, 41, 255, 0.03);
+    background-color: #fff;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin: 0 0 50px;
+
+    @include laptop {
+      display: block;
+      padding: 0 10px;
+      margin-bottom: 20px;
+    }
+
+    &-title {
+      flex: 0 0 588px;
+      margin: 0;
+      font-weight: 500;
+      font-size: 38px;
+      line-height: 118%;
+      color: #363636;
+
+      @include desktop {
+        flex: 0 0 480px;
+        font-size: 34px;
+      }
+
+      @include laptop {
+        margin: 0 0 10px;
+      }
+
+      @include tablet {
+        font-size: 20px;
+      }
+    }
+
+    &-description {
+      margin: 0;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 171%;
+      color: #606060;
+
+      @include tablet {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__advantages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    @include laptop {
+      gap: 10px;
+    }
+  }
+
+  &__advantage {
+    flex: 0 0 calc(100% / 3 - 24px / 3 * 2);
+    padding: 30px;
+    box-sizing: border-box;
+
+    @include desktop {
+      flex: 0 0 calc(50% - 24px / 2);
+      padding: 20px;
+    }
+
+    @include laptop {
+      flex: 0 0 calc(50% - 10px / 2);
+    }
+
+    @include tablet {
+      flex: 0 0 100%;
+    }
+
+    &-figure {
+      margin: 0 0 40px;
+
+      @include tablet {
+        margin: 0 0 20px;
+      }
+
+      &-image {
+        display: block;
+        max-width: 80px;
+        height: auto;
+
+        @include tablet {
+          max-width: 60px;
+        }
+      }
+    }
+
+    &-title {
+      margin: 0 0 10px;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 140%;
+      color: #363636;
+
+      @include tablet {
+        font-size: 18px;
+        line-height: 156%;
+      }
+    }
+
+    &-text {
+      margin: 0;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 171%;
+      color: #606060;
+
+      @include tablet {
+        font-size: 12px;
+        line-height: 183%;
+      }
+    }
+  }
 }
