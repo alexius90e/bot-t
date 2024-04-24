@@ -318,7 +318,7 @@ img {
   }
 }
 .header__buttons-burger {
-  display: inline-block;
+  display: none;
   height: 36px;
   width: 36px;
   border: none;
@@ -326,6 +326,11 @@ img {
   transition: transform ease-in-out 0.12s;
   will-change: transform;
   cursor: pointer;
+}
+@media (max-width: 992px) {
+  .header__buttons-burger {
+    display: inline-block;
+  }
 }
 .header__buttons-burger:hover {
   transform: scale(1.04);

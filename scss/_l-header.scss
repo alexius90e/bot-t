@@ -117,13 +117,12 @@
 
       &::-webkit-scrollbar {
         width: 4px;
-        
       }
-  
+
       &::-webkit-scrollbar-track {
         background: rgba($color: #2284ea, $alpha: 0.2);
       }
-  
+
       &::-webkit-scrollbar-thumb {
         background: rgba($color: #2284ea, $alpha: 1);
         border-radius: 4px;
@@ -238,7 +237,7 @@
     }
 
     &-burger {
-      display: inline-block;
+      display: none;
       height: 36px;
       width: 36px;
       border: none;
@@ -246,6 +245,10 @@
       transition: transform ease-in-out 0.12s;
       will-change: transform;
       cursor: pointer;
+
+      @include laptop {
+        display: inline-block;
+      }
 
       &:hover {
         transform: scale(1.04);
