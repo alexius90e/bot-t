@@ -5,6 +5,21 @@
   right: 0;
   z-index: 5;
   padding: 10px 0;
+  background-color: $white;
+
+  &.active::before {
+    @include laptop {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba($color: $black, $alpha: 0.5);
+      z-index: 200;
+      backdrop-filter: blur(5px);
+    }
+  }
 
   & .container {
     display: flex;
@@ -14,6 +29,8 @@
   }
 
   &__logo {
+    flex: 0 0 auto;
+
     &-link {
       font-family: 'Micra', sans-serif;
       font-weight: 700;
@@ -22,43 +39,190 @@
     }
   }
 
-  &__nav {
-    display: flex;
-    gap: 50px;
-
+  &.active &__nav {
     @include laptop {
-      gap: 24px;
+      transform: translateX(0);
+    }
+  }
+
+  &__nav {
+    @include laptop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 500;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 360px;
+      width: 100%;
+      padding: 24px 20px;
+      box-sizing: border-box;
+      background-color: $white;
+      box-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.2);
+      transform: translateX(-800px);
+      transition: transform ease-in-out 0.3s;
+      will-change: transform;
+      cursor: pointer;
     }
 
     @include tablet {
-      display: none;
+      padding: 16px 20px;
     }
 
-    &-link {
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 171%;
-      color: #363636;
+    &-top {
+      display: none;
 
-      &_dropdown {
+      @include laptop {
         display: flex;
         align-items: center;
-        gap: 5px;
+        justify-content: space-between;
+        margin: 0 0 36px;
+      }
+    }
 
-        &::after {
-          content: '';
-          display: inline-block;
-          height: 7px;
-          width: 12px;
-          background: url(../assets/arrow.svg) center no-repeat;
-          background-size: 12px;
+    &-close {
+      display: inline-block;
+      height: 36px;
+      width: 36px;
+      border: none;
+      background: url(../assets/close.svg) center no-repeat;
+      transition: transform ease-in-out 0.12s;
+      will-change: transform;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.04);
+      }
+
+      &:active {
+        transform: scale(1);
+      }
+    }
+
+    &-menu {
+      display: flex;
+      gap: 50px;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+
+      @include laptop {
+        flex-direction: column;
+        gap: 8px;
+        max-height: calc(100vh - 110px);
+        padding-right: 8px;
+        overflow: auto;
+      }
+
+      &::-webkit-scrollbar {
+        width: 4px;
+        
+      }
+  
+      &::-webkit-scrollbar-track {
+        background: rgba($color: #2284ea, $alpha: 0.2);
+      }
+  
+      &::-webkit-scrollbar-thumb {
+        background: rgba($color: #2284ea, $alpha: 1);
+        border-radius: 4px;
+      }
+
+      &-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        @include laptop {
+          flex-direction: column;
+          align-items: flex-start;
         }
+
+        &:has(.header__nav-submenu) {
+          &::after {
+            content: '';
+            display: inline-block;
+            height: 7px;
+            width: 12px;
+            background: url(../assets/arrow.svg) center no-repeat;
+            background-size: 12px;
+            transition: transform ease-in-out 0.12s, filter ease-in-out 0.12s;
+            will-change: transform, filter;
+            filter: brightness(0.2);
+
+            @include laptop {
+              display: none;
+            }
+          }
+
+          &:hover::after {
+            transform: rotate(180deg);
+            filter: brightness(1);
+          }
+        }
+
+        &:hover > &-link {
+          color: #2284ea;
+
+          @include laptop {
+            color: #363636;
+          }
+        }
+
+        &-link {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 200%;
+          color: #363636;
+          transition: color ease-in-out 0.2s;
+          will-change: color;
+          cursor: pointer;
+
+          &:hover {
+            color: #2284ea !important;
+          }
+        }
+      }
+    }
+
+    &-menu-item:hover > &-submenu {
+      display: flex;
+    }
+
+    &-submenu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      display: none;
+      flex-direction: column;
+      min-width: 120px;
+      width: max-content;
+      gap: 8px;
+      margin: 0;
+      padding: 16px 12px;
+      border-radius: 16px;
+      list-style-type: none;
+      background-color: $white;
+      box-shadow: 0 0 8px rgba($color: #000000, $alpha: 0.2);
+
+      @include laptop {
+        position: static;
+        display: flex;
+        padding: 0;
+        padding-left: 20px;
+        box-shadow: none;
       }
     }
   }
 
-  &__login {
-    &-button {
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    &-login {
       padding: 21px 40px;
       font-weight: 500;
       font-size: 14px;
@@ -69,7 +233,26 @@
       background: rgba(255, 255, 255, 0.1);
 
       @include tablet {
-        padding: 15px 30px;
+        padding: 14px 26px;
+      }
+    }
+
+    &-burger {
+      display: inline-block;
+      height: 36px;
+      width: 36px;
+      border: none;
+      background: url(../assets/burger.svg) center no-repeat;
+      transition: transform ease-in-out 0.12s;
+      will-change: transform;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.04);
+      }
+
+      &:active {
+        transform: scale(1);
       }
     }
   }

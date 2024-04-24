@@ -17,15 +17,60 @@
         </div>
 
         <nav class="header__nav">
-          <a class="header__nav-link header__nav-link_dropdown" href="#">Боты</a>
-          <a class="header__nav-link header__nav-link_dropdown" href="#">Сервисы</a>
-          <a class="header__nav-link" href="#">Отзывы</a>
-          <a class="header__nav-link" href="#">Способ оплаты</a>
-          <a class="header__nav-link" href="#">FAQ</a>
+          <div class="header__nav-top">
+            <div class="header__logo">
+              <a class="header__logo-link" href="./">BOT-T</a>
+            </div>
+
+            <button class="header__nav-close"></button>
+          </div>
+
+          <ul class="header__nav-menu">
+            <li class="header__nav-menu-item">
+              <a class="header__nav-menu-item-link" href="#">Боты</a>
+
+              <ul class="header__nav-submenu">
+                <li class="header__nav-submenu-item">
+                  <a class="header__nav-menu-item-link" href="#">Бот 1</a>
+                </li>
+                <li class="header__nav-submenu-item">
+                  <a class="header__nav-menu-item-link" href="#">Бот 2</a>
+                </li>
+                <li class="header__nav-submenu-item">
+                  <a class="header__nav-menu-item-link" href="#">Бот 3</a>
+                </li>
+              </ul>
+            </li>
+            <li class="header__nav-menu-item">
+              <a class="header__nav-menu-item-link" href="#">Сервисы</a>
+
+              <ul class="header__nav-submenu">
+                <li class="header__nav-submenu-item">
+                  <a class="header__nav-menu-item-link" href="#">Сервис 1</a>
+                </li>
+                <li class="header__nav-submenu-item">
+                  <a class="header__nav-menu-item-link" href="#">Сервис 2</a>
+                </li>
+                <li class="header__nav-submenu-item">
+                  <a class="header__nav-menu-item-link" href="#">Сервис 3</a>
+                </li>
+              </ul>
+            </li>
+            <li class="header__nav-menu-item">
+              <a class="header__nav-menu-item-link" href="#">Отзывы</a>
+            </li>
+            <li class="header__nav-menu-item">
+              <a class="header__nav-menu-item-link" href="#">Способ оплаты</a>
+            </li>
+            <li class="header__nav-menu-item">
+              <a class="header__nav-menu-item-link" href="#">FAQ</a>
+            </li>
+          </ul>
         </nav>
 
-        <div class="header__login">
-          <button class="header__login-button button">Вход</button>
+        <div class="header__buttons">
+          <button class="header__buttons-login button">Вход</button>
+          <button class="header__buttons-burger"></button>
         </div>
       </div>
     </header>
@@ -67,7 +112,9 @@
             </div>
 
             <div class="create-bot__advantage create-bot__advantage_image">
-              <img class="create-bot__advantage-image" src="./assets/reviews.png" alt="bot" />
+              <a href="#">
+                <img class="create-bot__advantage-image" src="./assets/reviews.png" alt="bot" />
+              </a>
               <span class="create-bot__advantage-text">У нас более 1 500 отзывов</span>
             </div>
           </div>
